@@ -18,24 +18,21 @@ def Display_Rainfall():
     datadr = cur.fetchall()
     return datadr
 
-#def Display_Ground_Water():
-    #querydgw = 
+def Display_Ground_Water():
+    querydgw = 'SELECT water_ground FROM Geography'
+    cur.execute(querydgw)
+    datadgw = cur.fetchall()
+    return datadgw
 
-ans="yes"
-while ans=="yes":
-    print("Geography table functions")
-    print("1. Fetch details using pincode")
-    print("2. Display annual rainfall")
-    print("3. Display ground water")
-    print("4. Display total available water")
-    print("5. Display water required")
-    choice=int(input("Enter choice:\t"))
-    if choice==1:
-        pin=input("Enter pincode:\t")
-        print(SearchByPincode(pin))
-    '''elif choice==2:
-    elif choice==3:
-    elif choice==4:
-    elif choice==5:
-    '''
-    ans=input("Press yes to continue:\t")
+def Display_Total_Water():
+    querydtw = 'SELECT water_available FROM Geography'
+    cur.execute(querydtw)
+    datadtw = cur.fetchall()
+    return datadtw
+
+def Display_Required_Water():
+    querydrw = 'SELECT water_required FROM Geography'
+    cur.execute(querydrw)
+    datadrw = cur.fetchall()
+    return datadrw
+
