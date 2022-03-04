@@ -6,6 +6,8 @@ cnx = ms.connect(
     database = 'jalshaabh')
 cur = cnx.cursor()
 
+#module
+
 def SearchByPincode(pin):
     querysbp = 'SELECT * FROM Geography WHERE pincode_area = "{}"'.format(pin)
     cur.execute(querysbp)
@@ -35,4 +37,3 @@ def Display_Required_Water():
     cur.execute(querydrw)
     datadrw = cur.fetchall()
     return datadrw
-
