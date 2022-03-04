@@ -7,7 +7,6 @@ cnx = ms.connect(
 
 cur = cnx.cursor()
 
-#functions
 def Update_pincode(old_pincode,new_pincode):
     query="UPDATE geography, officer SET geography.pincode_area = '{}',officer.pincode_area = '{}' WHERE geography.pincode_area = '{}' AND officer.pincode_area = '{}'".format(new_pincode,new_pincode,old_pincode,old_pincode)
     cur.execute(query)
