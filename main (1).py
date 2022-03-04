@@ -29,7 +29,7 @@ def create_tables():
 
     cur.execute(query_financial)
     cnx.commit()
-    print("Created table Financial")
+    return "Created table Financial"
 
     query_geography = '''CREATE TABLE Geography
     (pincode_area int PRIMARY KEY,
@@ -40,7 +40,7 @@ def create_tables():
 
     cur.execute(query_geography)
     cnx.commit()
-    print("Created table Geography")
+    return "Created table Geography"
 
     query_officer = '''CREATE TABLE Officer
     (pincode_area int PRIMARY KEY,
@@ -50,8 +50,8 @@ def create_tables():
     '''
     cur.execute(query_officer)
     cnx.commit()
-    print("Created table Officer")
-create_tables()
+    return "Created table Officer"
+
 #INSERTING DATA INTO TABLES
 
 def insert_sample_data():
@@ -85,5 +85,4 @@ def insert_sample_data():
     cur.execute(data_officer)
     cnx.commit()
 
-    print("Inserted sample data")
-insert_sample_data()
+    return "Inserted sample data"
