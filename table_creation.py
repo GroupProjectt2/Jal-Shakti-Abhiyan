@@ -17,8 +17,11 @@ cnx = ms.connect(
     database = 'jalshaabh')
 cur = cnx.cursor()
 
-#CREATING TABLES
+
 def create_tables():
+    
+    #CREATING TABLES
+    
     query_financial = '''CREATE TABLE Financial
     (id_officer varchar(5) PRIMARY KEY,
     name_officer varchar(30) NOT NULL,
@@ -29,7 +32,6 @@ def create_tables():
 
     cur.execute(query_financial)
     cnx.commit()
-    return "Created table Financial"
 
     query_geography = '''CREATE TABLE Geography
     (pincode_area int PRIMARY KEY,
@@ -40,7 +42,6 @@ def create_tables():
 
     cur.execute(query_geography)
     cnx.commit()
-    return "Created table Geography"
 
     query_officer = '''CREATE TABLE Officer
     (pincode_area int PRIMARY KEY,
@@ -50,11 +51,9 @@ def create_tables():
     '''
     cur.execute(query_officer)
     cnx.commit()
-    return "Created table Officer"
 
-#INSERTING DATA INTO TABLES
+    #INSERTING DATA INTO TABLES
 
-def insert_sample_data():
     data_financial = '''INSERT INTO Financial VALUES
     ('ID001', 'Mr.Sharma', 500000, 300000, 200000, 6),
     ('ID002', 'Mr.Desai' , 350000, 150000, 200000, 4),
@@ -85,4 +84,4 @@ def insert_sample_data():
     cur.execute(data_officer)
     cnx.commit()
 
-    return "Inserted sample data"
+    return
