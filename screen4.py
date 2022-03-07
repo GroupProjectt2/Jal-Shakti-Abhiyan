@@ -1,4 +1,5 @@
 from tkinter import *
+import screen2
 def Screen4():
     root = Tk()
 
@@ -21,4 +22,7 @@ def Screen4():
     Enter=Button(root,text="ENTER",bg="white")
     Enter.grid(row=2,column=1,pady=10,ipadx=20,ipady=10)
 
+    Back=Button(root,text="<- Main Menu",bg="yellow",command=lambda: [root.destroy(),screen2.Screen2()])
+    Back.grid(row=2,column=3,ipadx=15,ipady=0.5)
+    
     root.mainloop()
