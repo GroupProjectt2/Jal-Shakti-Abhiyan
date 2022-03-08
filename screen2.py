@@ -3,7 +3,7 @@ import tkinter.font as font
 import screen3
 import screen4
 import screen5
-#import screen6
+import screen6
 def Screen2():
 
     root = Tk()
