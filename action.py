@@ -18,7 +18,7 @@ def action_advice(inp):
 
     found = False
     for row in data:
-        if int(row[0]) == inp:
+        if int(row[0]) == int(inp):
             found = True
             diff = int(row[2])-int(row[1])
     if found == False:
