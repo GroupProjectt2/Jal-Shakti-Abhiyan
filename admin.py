@@ -8,7 +8,7 @@ cnx = ms.connect(
 cur = cnx.cursor()
 
 #functions
-def change_officer_name(officer_name,officer_id):
+def Change_officer_name(officer_name,officer_id):
     query="UPDATE financial,officer SET financial.name_officer = '{}', officer.name_officer = '{}' WHERE financial.id_officer = '{}' AND officer.id_officer = '{}'".format(officer_name,officer_name,officer_id,officer_id)
     cur.execute(query)
     cnx.commit()

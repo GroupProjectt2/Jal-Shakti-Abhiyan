@@ -4,9 +4,8 @@ cny = ms.connect(
     user = 'root',
     password = '12345')
 
-
 cur = cny.cursor()
-cur.execute('DROP DATABASE JalShaAbh')
+cur.execute('DROP DATABASE jalshaabh')
 cur.execute('CREATE DATABASE JalShaAbh')
 cur.close()
 
@@ -16,10 +15,8 @@ cnx = ms.connect(
     password = '12345',
     database = 'jalshaabh')
 cur = cnx.cursor()
-
-
+#functions
 def create_tables():
-    
     #CREATING TABLES
     
     query_financial = '''CREATE TABLE Financial
@@ -32,7 +29,8 @@ def create_tables():
 
     cur.execute(query_financial)
     cnx.commit()
-
+    print("Created table Financial")
+    
     query_geography = '''CREATE TABLE Geography
     (pincode_area int PRIMARY KEY,
     water_rain int NOT NULL CHECK (water_rain > -1),
@@ -42,18 +40,19 @@ def create_tables():
 
     cur.execute(query_geography)
     cnx.commit()
+    print("Created table Geography")
 
     query_officer = '''CREATE TABLE Officer
     (pincode_area int PRIMARY KEY,
     name_area varchar(20) NOT NULL,
     name_officer varchar(20) NOT NULL,
-    id_officer varchar(5) REFERENCES Financial(id_officer))
+    id_officer varchar(5) NOT NULL REFERENCES Financial(id_officer))
     '''
     cur.execute(query_officer)
     cnx.commit()
+    print("Created table Officer")
 
     #INSERTING DATA INTO TABLES
-
     data_financial = '''INSERT INTO Financial VALUES
     ('ID001', 'Mr.Sharma', 500000, 300000, 200000, 6),
     ('ID002', 'Mr.Desai' , 350000, 150000, 200000, 4),
@@ -63,7 +62,8 @@ def create_tables():
 
     cur.execute(data_financial)
     cnx.commit()
-
+    print("Inserted values into Financial table")
+    
     data_geography = '''INSERT INTO Geography VALUES
     ('110023', 501.6, 21.11, 750, 1000),
     ('110045', 497.5, 21.56, 700, 750),
@@ -73,6 +73,7 @@ def create_tables():
 
     cur.execute(data_geography)
     cnx.commit()
+    print("Inserted values into Geography table")
 
     data_officer = '''INSERT INTO Officer VALUES
     ('110023', 'SAROJINI VILLAGE', 'Mr.Sharma', 'ID001'),
@@ -80,8 +81,8 @@ def create_tables():
     ('110075', 'DWARKA'          , 'Mr.Arora' , 'ID003'),
     ('110085', 'ROHINI'          , 'Mr.Singh' , 'ID004'),
     ('110001', 'CONNAUGHT PLACE' , 'Mr.Mehta' , 'ID005')'''
-
     cur.execute(data_officer)
     cnx.commit()
-
+    print("Inserted values into Officer table")
     return
+create_tables()

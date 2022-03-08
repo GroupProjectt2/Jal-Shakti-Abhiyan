@@ -1,4 +1,4 @@
-import screen2
+import screen1
 
-screen2.Screen2()
+screen1.Screen1()
 #print(res)

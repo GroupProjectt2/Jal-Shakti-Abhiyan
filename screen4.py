@@ -2,7 +2,7 @@ from tkinter import *
 import screen2
 def Screen4():
     root = Tk()
-
+    root.title('Financial')
     root.geometry('400x150')
     root.configure(bg='#f9bf8f')
 

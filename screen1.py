@@ -2,10 +2,9 @@ from tkinter import *
 import screen2
 def Screen1():
     root = Tk()
-
+    root.title('LOGIN')
     root.geometry('300x150')
     root.configure(bg='white')
-
 
     Label1=Label(root,text="Enter officer id")
     Label2=Label(root,text="Enter password")
@@ -21,9 +20,9 @@ def Screen1():
 
     def Onclick():
         ID=inp1.get()
-        if ID=='123':
+        if ID=='officer':
             PWD=inp2.get()
-            if PWD=='pwd':
+            if PWD=='password':
                 print("Login Successful!")
                 root.destroy()
                 screen2.Screen2()

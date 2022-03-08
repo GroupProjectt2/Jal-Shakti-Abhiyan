@@ -2,7 +2,7 @@ from tkinter import *
 import screen2
 def Screen5():
     root = Tk()
-
+    root.title('Admin')
     root.geometry('400x150')
     root.configure(bg='#9bbb58')
 

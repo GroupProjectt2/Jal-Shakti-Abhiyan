@@ -3,7 +3,7 @@ import screen2
 def Screen3():
     
     root = Tk()
-
+    root.title('Geographic')
     root.geometry('450x150')
     root.configure(bg='#f9bf8f')
 
