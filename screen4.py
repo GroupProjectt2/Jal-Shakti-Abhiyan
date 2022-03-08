@@ -1,28 +1,57 @@
 from tkinter import *
+import financial_table as fin
 import screen2
 def Screen4():
     root = Tk()
     root.title('Financial')
-    root.geometry('400x150')
+    root.geometry('600x400')
     root.configure(bg='#f9bf8f')
 
 
-    Label1=Label(root,text="Enter area pincode")
-    Label2=Label(root,text="Enter officer id")
+    Label1=Label(root,text="Enter officer id")
 
     Label1.grid(row=0,padx=10,pady=10)
-    Label2.grid(row=1,padx=10,pady=10)
 
     inp1=Entry(root,width=25)
-    inp2=Entry(root,width=25)
 
     inp1.grid(row=0,column=1)
-    inp2.grid(row=1,column=1)
 
-    Enter=Button(root,text="ENTER",bg="white")
+    def Onclick1():
+        oid = inp1.get()
+        print(fin.Display_officerID(oid))
+
+    def Onclick2():
+        oid = inp1.get()
+        print(fin.Display_grant(oid))
+
+    def Onclick3():
+        oid = inp1.get()
+        print(fin.Display_salary(oid))
+
+    def Onclick4():
+        oid = inp1.get()
+        print(fin.Display_cost(oid))
+
+    def Onclick5():
+        oid = inp1.get()
+        print(fin.Active_months(oid))
+
+    Enter=Button(root,text="Search by Officer ID",bg="white",command = Onclick1)
+    Enter.grid(row=1,column=1,pady=10,ipadx=20,ipady=10)
+
+    Enter=Button(root,text="Display Grant",bg="white",command = Onclick2)
     Enter.grid(row=2,column=1,pady=10,ipadx=20,ipady=10)
 
+    Enter=Button(root,text="Display Salary",bg="white",command = Onclick3)
+    Enter.grid(row=2,column=2,pady=10,ipadx=20,ipady=10)
+
+    Enter=Button(root,text="Display Cost",bg="white",command = Onclick4)
+    Enter.grid(row=3,column=1,pady=10,ipadx=20,ipady=10)
+
+    Enter=Button(root,text="Active Months",bg="white",command = Onclick5)
+    Enter.grid(row=3,column=2,pady=10,ipadx=20,ipady=10)
+
     Back=Button(root,text="<- Main Menu",bg="yellow",command=lambda: [root.destroy(),screen2.Screen2()])
-    Back.grid(row=2,column=3,ipadx=15,ipady=0.5)
+    Back.grid(row=4,column=3,ipadx=15,ipady=0.5)
     
     root.mainloop()
