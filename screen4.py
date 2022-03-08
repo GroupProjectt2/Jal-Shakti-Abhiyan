@@ -18,35 +18,35 @@ def Screen4():
         if len(oid)!=0:
             print(fin.Display_officerID(oid))
         else:
-            print("Input a pincode to fetch details!")
+            print("Input a valid pincode to fetch details!")
 
     def Onclick2():
         oid = inp1.get()
         if len(oid)!=0:
             print(fin.Display_grant(oid))
         else:
-            print("Input a pincode to fetch details!")
+            print("Input a valid pincode to fetch details!")
 
     def Onclick3():
         oid = inp1.get()
         if len(oid)!=0:
             print(fin.Display_salary(oid))
         else:
-            print("Input a pincode to fetch details!")
+            print("Input a valid pincode to fetch details!")
 
     def Onclick4():
         oid = inp1.get()
         if len(oid)!=0:
             print(fin.Display_cost(oid))
         else:
-            print("Input a pincode to fetch details!")
+            print("Input a valid pincode to fetch details!")
 
     def Onclick5():
         oid = inp1.get()
         if len(oid)!=0:
             print(fin.Active_months(oid))
         else:
-            print("Input a pincode to fetch details!")
+            print("Input a valid pincode to fetch details!")
 
     Enter=Button(root,text="Search by Officer ID",bg="white",command = Onclick1)
     Enter.grid(row=1,column=1,pady=10,ipadx=20,ipady=10)

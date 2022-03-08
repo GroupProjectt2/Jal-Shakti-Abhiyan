@@ -2,7 +2,7 @@ import mysql.connector as ms
 cnx = ms.connect(
     host = 'localhost',
     user = 'root',
-    password = 'RInger@123',
+    password = '12345',
     database = 'jalshaabh')
 
 cur = cnx.cursor()

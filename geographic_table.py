@@ -2,7 +2,7 @@ import mysql.connector as ms
 cnx = ms.connect(
     host = 'localhost',
     user = 'root',
-    password = 'RInger@123',
+    password = '12345',
     database = 'jalshaabh')
 cur = cnx.cursor()
 
@@ -37,3 +37,29 @@ def Display_Required_Water(pin):
     cur.execute(querydrw)
     datadrw = cur.fetchone()
     return "Total useable water required in this is '{}' KL".format(datadrw[0])
+#menu
+ans="yes"
+while ans=="yes":
+    print("Geography table functions")
+    print("1. Fetch details using pincode")
+    print("2. Display annual rainfall")
+    print("3. Display ground water")
+    print("4. Display total available water")
+    print("5. Display water required")
+    choice=int(input("Enter choice:\t"))
+    if choice==1:
+        pin=input("Enter pincode:\t")
+        print(SearchByPincode(pin))
+    elif choice==2:
+        pin=input("Enter pincode:\t")
+        print(Display_Rainfall(pin))
+    elif choice==3:
+        pin=input("Enter pincode:\t")
+        print(Display_Ground_Water(pin))
+    elif choice==4:
+        pin=input("Enter pincode:\t")
+        print(Display_Total_Water(pin))
+    elif choice==5:
+        pin=input("Enter pincode:\t")
+        print(Display_Required_Water(pin))
+    ans=input("Press yes to continue:\t")
