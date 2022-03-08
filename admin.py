@@ -25,9 +25,3 @@ def Update_salary(officer_id,new_salary):
     cur.execute(query)
     cnx.commit()
     return "Successfully updated"
-
-def Update_pincode(old_pincode,new_pincode):
-    query="UPDATE geography, officer SET geography.pincode_area = '{}',officer.pincode_area = '{}' WHERE geography.pincode_area = '{}' AND officer.pincode_area = '{}'".format(new_pincode,new_pincode,old_pincode,old_pincode)
-    cur.execute(query)
-    cnx.commit()
-    return "Successfully updated"
