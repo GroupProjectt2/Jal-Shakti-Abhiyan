@@ -23,23 +23,19 @@ def Screen3():
 
     def Onclick2():
         pin=inp1.get()
-        for x in geo.Display_Rainfall(pin):
-            print(x)
+        print(geo.Display_Rainfall(pin))
 
     def Onclick3():
         pin=inp1.get()
-        for x in geo.Display_Ground_Water(pin):
-            print(x)
+        print(geo.Display_Ground_Water(pin))
 
     def Onclick4():
         pin=inp1.get()
-        for x in geo.Display_Total_Water(pin):
-            print(x)
+        print(geo.Display_Total_Water(pin))
 
     def Onclick5():
         pin=inp1.get()
-        for x in geo.Display_Required_Water(pin):
-            print(x)
+        print(geo.Display_Required_Water(pin))
         
     Enter=Button(root,text="Search by Pincode",bg="white",command=Onclick1)
     Enter.grid(row=1,column=1,pady=10,ipadx=20,ipady=10)
